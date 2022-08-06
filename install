@@ -1,0 +1,41 @@
+#!/bin/bash
+
+echo -n "Enter Version : "
+read version
+
+tput setaf 3
+echo "Mint Tea Vesion : $version "
+tput sgr0
+
+echo "Modify lsb-release ..."
+sed -i 's/LinuxMint/Mint Tea/g' /etc/lsb-release
+sed -i "s/19.3/$version/g" /etc/lsb-release
+echo "Modify lsb-release done"
+
+echo "Modify OS-release ..."
+sed -i 's/Linux Mint/Mint Tea/g' /usr/lib/os-release
+sed -i "s/19.3 (Tricia)/$version/g" /usr/lib/os-release
+sed -i 's/ID=linuxmint/ID=Mint Tea/g' /usr/lib/os-release
+sed -i "s/Linux Mint 19.3/Mint Tea $version/g" /usr/lib/os-release
+sed -i "s/19.3/$version/g" /usr/lib/os-release
+echo "Modify OS-release done"
+
+echo "Modify info ..."
+sed -i "s/RELEASE=19.3/RELEASE=$version/g" /etc/linuxmint/info
+sed -i "s/Linux Mint 19.3 Tricia/Mint Tea $version Tricia/g" /etc/linuxmint/info
+sed -i "s/Linux Mint 19.3 Xfce/Mint Tea $version Xfce/g" /etc/linuxmint/info
+echo "Modify info done"
+
+echo "Modify issue ..."
+sed -i "s/Linux Mint 19.3 Tricia/Mint Tea $version Tricia/g" /etc/issue
+echo "Modify issue done"
+
+sleep 3
+
+tput setaf 3
+cat /etc/*-release
+cat /etc/issue
+cat /etc/linuxmint/info
+tput sgr0
+
+
