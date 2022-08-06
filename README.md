@@ -7,14 +7,14 @@
 * Download the script
 * Open Terminal
 * $ chmod +x install 
-* $ ./install
+* $ sudo ./install
 
 ###### Clone
 * Open terminal
 * git clone https://github.com/Litle-Panda/LinuxMint-modify-release.git
 * $cd LinuxMint-modify-release.git
 * $ chmod +x install
-* $ ./install
+* $ sudo ./install
 
 ###### Result
 ![Result](https://github.com/Litle-Panda/LinuxMint-modify-release/blob/main/ss.png)
